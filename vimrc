@@ -3,6 +3,10 @@ call pathogen#infect()
 
 filetype plugin indent on
 
+" Vim should consider cakePHP .ctp files as html so they get properly
+" indented
+au BufNewFile,BufRead *.ctp set filetype=html
+
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching

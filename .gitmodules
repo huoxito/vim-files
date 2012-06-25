@@ -9,4 +9,4 @@
 	url = https://github.com/groenewege/vim-less.git
 [submodule "bundle/vim-ragtag"]
 	path = bundle/vim-ragtag
-	url = https://github.com/tpope/vim-ragtag.git
+	url = git@github.com:huoxito/vim-ragtag.git

@@ -3,6 +3,15 @@ call pathogen#infect()
 
 filetype plugin indent on
 
+syntax enable
+
+if has('gui_running')
+  set background=light
+  colorscheme solarized
+else
+  colorscheme desert
+endif
+
 " Vim should consider cakePHP .ctp files as html so they get properly
 " indented
 au BufNewFile,BufRead *.ctp set filetype=html
@@ -25,8 +34,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set cpoptions+=$
-
-colorscheme desert
 
 " Show line number, cursor position.
 set ruler

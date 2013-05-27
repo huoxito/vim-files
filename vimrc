@@ -6,7 +6,7 @@ filetype plugin indent on
 syntax enable
 
 if has('gui_running')
-  set background=light
+  set background=dark
   colorscheme solarized
 else
   colorscheme desert

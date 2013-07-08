@@ -45,3 +45,5 @@ imap <c-s> <Esc>:w<CR>a
 noremap <A-j> gT
 noremap <A-k> gt
 
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar

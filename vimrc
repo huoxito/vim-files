@@ -47,3 +47,10 @@ noremap <A-k> gt
 
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
+
+" Use cursor keys to navigate buffers.
+map <Right> :bnext<CR>
+map <Left> :bprev<CR>
+imap <Right> <ESC>:bnext<CR>
+imap <Left> <ESC>:bprev<CR>
+map <Del> :bd<CR>

@@ -57,3 +57,5 @@ map <Del> :bd<CR>
 
 " Control+l to put =>
 imap <c-l> =><space>
+
+set path+=config/**,app/**,lib/**,spec/**

@@ -1,20 +1,35 @@
 " Plugin: pathogen.vim: manage your runtimepath
 call pathogen#infect()
 
+" better default font size on Macvim
+set guifont=Menlo:h14
+
 filetype plugin indent on
+
+function! InsertCommand(command)
+    redir => output
+    silent execute a:command
+    redir END
+    call feedkeys('i'.substitute(output, '^[\n]*\(.\{-}\)[\n]*$', '\1', 'gm'))
+endfunction
+
+" paste ruby commant output on cursor
+command -nargs=+ Iruby call InsertCommand("ruby " . <q-args>)
 
 syntax enable
 
 if has('gui_running')
-  set background=dark
-  colorscheme solarized
+ set background=light
+ colorscheme solarized
 else
   colorscheme desert
 endif
 
 " Vim should consider cakePHP .ctp files as html so they get properly
 " indented
-au BufNewFile,BufRead *.ctp set filetype=html
+" au BufNewFile,BufRead *.ctp set filetype=html
+
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
@@ -58,4 +73,4 @@ map <Del> :bd<CR>
 " Control+l to put =>
 imap <c-l> =><space>
 
-set path+=config/**,app/**,lib/**,spec/**
+set path+=config/**,app/**,lib/**,spec/**,test/**,admin/**,core/**

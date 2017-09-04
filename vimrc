@@ -2,7 +2,7 @@
 call pathogen#infect()
 
 " better default font size on Macvim
-set guifont=Menlo:h14
+" set guifont=Menlo:h14
 
 filetype plugin indent on
 
@@ -14,12 +14,13 @@ function! InsertCommand(command)
 endfunction
 
 " paste ruby commant output on cursor
-command -nargs=+ Iruby call InsertCommand("ruby " . <q-args>)
+" command -nargs=+ Iruby call InsertCommand("ruby " . <q-args>)
 
 syntax enable
 
 if has('gui_running')
- set background=light
+ set background=dark
+ " set clipboard=unnamed
  colorscheme solarized
 else
   colorscheme desert
@@ -60,6 +61,12 @@ imap <c-s> <Esc>:w<CR>a
 noremap <A-j> gT
 noremap <A-k> gt
 
+" trying to copy and paste
+" vmap <C-c> "+yi
+" vmap <C-x> "+c
+" vmap <C-v> "c<ESC>"+p
+" imap <C-v> <C-r><C-o>+
+
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 
@@ -72,5 +79,3 @@ map <Del> :bd<CR>
 
 " Control+l to put =>
 imap <c-l> =><space>
-
-set path+=config/**,app/**,lib/**,spec/**,test/**,admin/**,core/**

@@ -25,3 +25,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "bundle/vim-rhubarb"]
+	path = bundle/vim-rhubarb
+	url = git@github.com:tpope/vim-rhubarb.git

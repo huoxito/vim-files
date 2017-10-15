@@ -79,3 +79,8 @@ map <Del> :bd<CR>
 
 " Control+l to put =>
 imap <c-l> =><space>
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" set path+=config/**,app/**,lib/**,spec/**,test/*

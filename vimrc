@@ -2,7 +2,7 @@
 call pathogen#infect()
 
 " better default font size on Macvim
-" set guifont=Menlo:h14
+set guifont=Menlo:h13
 
 filetype plugin indent on
 

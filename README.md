@@ -5,11 +5,21 @@ vim-files
 
 Clone repo:
 
-> git clone git@github.com:huoxito/vim-files.git ~/.vim
+```
+git clone git@github.com:huoxito/vim-files.git ~/.vim
+```
 
 Pull submodules:
 
-> git submodule init && git submodule update
+```
+git submodule init && git submodule update
+```
+
+Bump a submodule:
+
+```
+git submodule update --remote bundle/vim-fugitive
+```
 
 ### THE MIT License
 

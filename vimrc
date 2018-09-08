@@ -50,6 +50,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set cpoptions+=$
+set columns=173
 
 " Show line number, cursor position.
 set ruler

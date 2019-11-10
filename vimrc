@@ -92,3 +92,11 @@ let g:ale_fixers['javascript'] = ['prettier']
 " let g:ale_javascript_prettier_options = '--single-quote --no-semi'
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
+
+" looks like some vim upgrade broke this. See:
+" https://github.com/dense-analysis/ale/issues/2765
+" https://github.com/vim/vim/issues/4830
+"
+" filetype javascriptreact -> javascript.jsx
+autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
+au BufRead,BufNewFile *.jsx set filetype=javascript.jsx

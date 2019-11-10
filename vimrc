@@ -86,6 +86,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " set path+=config/**,app/**,lib/**,spec/**,test/*
 
+let g:airline#extensions#ale#enabled = 1
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 " let g:ale_javascript_prettier_options = '--single-quote --no-semi'

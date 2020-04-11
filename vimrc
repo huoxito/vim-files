@@ -23,7 +23,7 @@ if has('gui_running')
  " set clipboard=unnamed
  colorscheme solarized
 else
-  colorscheme desert
+ colorscheme desert
 endif
 
 " Vim should consider cakePHP .ctp files as html so they get properly
@@ -87,8 +87,15 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " set path+=config/**,app/**,lib/**,spec/**,test/*
 
 let g:airline#extensions#ale#enabled = 1
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'tslint']
+\}
+
+let g:ale_fixers = {
+\  'javascript': ['prettier'],
+\  'typescript': ['prettier']
+\}
 " let g:ale_javascript_prettier_options = '--single-quote --no-semi'
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
@@ -100,3 +107,7 @@ let g:ale_fix_on_save = 1
 " filetype javascriptreact -> javascript.jsx
 autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+
+" let g:tsuquyomi_completion_detail = 1
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
